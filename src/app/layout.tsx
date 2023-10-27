@@ -6,7 +6,8 @@ import { Providers } from "./providers";
 const roboto = Roboto({ weight: ["400", "700"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Twitter",
+  title: "Twitter / It's what's happening",
+  description: "See what’s happening in the world right now",
 };
 
 export default function RootLayout({
@@ -16,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className={roboto.className}>
         <Providers>{children}</Providers>
       </body>
     </html>
