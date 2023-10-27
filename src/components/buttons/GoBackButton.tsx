@@ -1,20 +1,13 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 import { HiOutlineArrowLeft } from "react-icons/hi";
 
 export const GoBackButton = () => {
-  const router = useRouter();
-
-  const handleGoBackClick = () => {
-    router.refresh();
-    router.push("/home");
-  };
-
   return (
-    <button onClick={handleGoBackClick}>
+    <Link href="/home">
       <HiOutlineArrowLeft size="20px" />
-    </button>
+    </Link>
   );
 };
