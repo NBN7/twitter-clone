@@ -2,6 +2,8 @@ import { SignButton } from "@/components/buttons/SignButton";
 import { Divider } from "@nextui-org/react";
 import { Anchor } from "@/components/anchor";
 
+import { SIGN_METHODS } from "@/constants/signMethods";
+
 export default function LadingPage() {
   return (
     <main className="w-full flex items-center justify-between">
@@ -14,21 +16,26 @@ export default function LadingPage() {
       </div> */}
 
       <div className="w-full flex flex-col items-center gap-8 p-8">
-        <img src="/favicon.ico" alt="logo" width="30px" className="sm:hidden" />
+        <img src="/favicon.ico" alt="logo" width="30px" />
         <h1 className="text-4xl font-bold">
           See what’s happening in the world right now.
         </h1>
 
         <div className="w-full flex flex-col gap-4">
-          <SignButton text="Sign up with Google" />
-          <SignButton text="Sign up with Apple" />
+          <SignButton
+            text="Sign up with Google"
+            signMethod={SIGN_METHODS.GOOGLE}
+          />
+          <SignButton
+            text="Sign up with Apple"
+            signMethod={SIGN_METHODS.APPLE}
+          />
 
           <Divider className="my-2" />
 
           <SignButton
             text="Sign up with phone or email"
-            textColor="white"
-            backgroundColor="#1D9BF0"
+            signMethod={SIGN_METHODS.EMAILNUMBER}
           />
 
           <p className="text-xs text-center text-[#71767B] font-semibold">
@@ -40,12 +47,7 @@ export default function LadingPage() {
 
         <div className="w-full flex flex-col gap-4">
           <p className="font-bold">Already have an account?</p>
-          <SignButton
-            text="Sign In"
-            textColor="#1D9BF0"
-            backgroundColor="inherit"
-            border
-          />
+          <SignButton text="Sign In" signMethod={SIGN_METHODS.DEFAULT} border />
         </div>
       </div>
     </main>
