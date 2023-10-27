@@ -26,7 +26,6 @@ export const TweetPost = ({ user }: ITweerPost) => {
             alt: "Luffy",
             size: "lg",
           }}
-          className="justify-start"
         />
 
         <p>
