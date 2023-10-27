@@ -7,7 +7,7 @@ export default async function HomePage() {
   const users = await getAllUsers();
 
   return (
-    <main>
+    <main id="home">
       {users.map((user: TUser) => (
         <HomePost key={user.id} user={user} />
       ))}
