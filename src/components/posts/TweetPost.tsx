@@ -17,7 +17,7 @@ import { User } from "@nextui-org/user";
 export const TweetPost = ({ user }: ITweerPost) => {
   return (
     <article className="w-full flex flex-col items-center overflow-hidden">
-      <div className="sm:w-[600px] sm:border-l sm:border-r p-4 sm:border-[#2F3336]">
+      <div className="sm:w-[600px] sm:border-[#2F3336] sm:border-l sm:border-r p-4">
         <User
           name={user.name}
           description={`@${user.username}`}
