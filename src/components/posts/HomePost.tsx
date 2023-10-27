@@ -26,38 +26,41 @@ export const HomePost = ({ user }: IPost) => {
   return (
     <article
       onClick={handleArticleClick}
-      className="w-full flex gap-2 p-4 border-b border-b-[#2F3336] cursor-pointer overflow-hidden"
+      className="w-full flex justify-center overflow-hidden"
     >
-      {/* PROFILE PICTURE CONTAINER */}
-      <div>
-        <Avatar src="/luffy.png" />
-      </div>
-
-      {/* POST CONTENT CONTAINER */}
-      <div className="w-full overflow-hidden">
-        {/* POST HEADER */}
-        <div className="w-full flex gap-2 overflow-hidden">
-          <h2 className="font-bold truncate">{user.name}</h2>
-          <h3 className="text-[#71767B] truncate">@{user.username}</h3>
+      <div className="sm:w-[600px] sm:border-[#2F3336] sm:border-l sm:border-r w-full flex gap-2 p-4 border-b border-b-[#2F3336] cursor-pointer overflow-hidden">
+        {/* PROFILE PICTURE CONTAINER */}
+        <div>
+          <Avatar src="/luffy.png" />
         </div>
 
-        {/* POST BODY */}
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
-          voluptates repellendus esse quisquam amet voluptate quibusdam mollitia
-          at eos nihil laborum ad ducimus, accusantium minus, ullam inventore
-          vitae laboriosam quidem. Quas eveniet repellat sed laborum, dolorem
-          quia optio fugiat pariatur quidem voluptates assumenda dolores
-          cupiditate obcaecati magnam vero eius sunt necessitatibus molestias
-          temporibus similique eum delectus laudantium iusto. Quos, nulla!
-        </p>
+        {/* POST CONTENT CONTAINER */}
+        <div className="w-full overflow-hidden">
+          {/* POST HEADER */}
+          <div className="w-full flex gap-2 overflow-hidden">
+            <h2 className="font-bold truncate">{user.name}</h2>
+            <h3 className="text-[#71767B] truncate">@{user.username}</h3>
+          </div>
 
-        {/* POST FOOTER */}
-        <div className="w-full flex justify-between items-center mt-2 text-[#71767B]">
-          <CommentButton />
-          <RetweetButton />
-          <LikeButton />
-          <ShareButton />
+          {/* POST BODY */}
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
+            voluptates repellendus esse quisquam amet voluptate quibusdam
+            mollitia at eos nihil laborum ad ducimus, accusantium minus, ullam
+            inventore vitae laboriosam quidem. Quas eveniet repellat sed
+            laborum, dolorem quia optio fugiat pariatur quidem voluptates
+            assumenda dolores cupiditate obcaecati magnam vero eius sunt
+            necessitatibus molestias temporibus similique eum delectus
+            laudantium iusto. Quos, nulla!
+          </p>
+
+          {/* POST FOOTER */}
+          <div className="w-full flex justify-between items-center mt-2 text-[#71767B]">
+            <CommentButton />
+            <RetweetButton />
+            <LikeButton />
+            <ShareButton />
+          </div>
         </div>
       </div>
     </article>
