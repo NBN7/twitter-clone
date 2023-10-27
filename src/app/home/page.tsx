@@ -1,0 +1,16 @@
+import { HomePost } from "@/components/posts/HomePost";
+import { TUser } from "@/types/User";
+
+import { getAllUsers } from "@/utils/users/getAllUsers";
+
+export default async function HomePage() {
+  const users = await getAllUsers();
+
+  return (
+    <main>
+      {users.map((user: TUser) => (
+        <HomePost key={user.id} user={user} />
+      ))}
+    </main>
+  );
+}
