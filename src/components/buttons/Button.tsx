@@ -21,10 +21,11 @@ export const Button = ({ text, border, variant }: IButton) => {
     <button
       onClick={handleClick}
       className={`w-full font-bold rounded-3xl py-2 
-      ${variant === BUTTON_VARIANTS.DEFAULT ? "text-black bg-white" : ""}
+      ${variant === BUTTON_VARIANTS.DEFAULT ? "text-sky-500 bg-inherit" : ""}
       ${variant === BUTTON_VARIANTS.PRIMARY ? "text-white bg-sky-500" : ""}
       ${variant === BUTTON_VARIANTS.SECONDARY ? "text-black bg-white" : ""} 
-      ${border ? "border border-[#536471]" : ""}`}
+      ${border ? "border border-[#536471]" : ""}
+      hover:opacity-80 transition-all`}
     >
       {text}
     </button>
