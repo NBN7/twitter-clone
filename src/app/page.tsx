@@ -4,7 +4,7 @@ import { Anchor } from "@/components/Anchor";
 
 import { BsTwitter } from "react-icons/bs";
 
-export default function LadingPage() {
+export default function LandingPage() {
   return (
     <main className="w-full flex items-center justify-between">
       {/* BLUE SIDE */}
