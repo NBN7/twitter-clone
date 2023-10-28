@@ -1,8 +1,6 @@
-import { SignButton } from "@/components/buttons/SignButton";
+import { Button } from "@/components/buttons/Button";
 import { Divider } from "@nextui-org/react";
-import { Anchor } from "@/components/anchor";
-
-import { SIGN_METHODS } from "@/constants/signMethods";
+import { Anchor } from "@/components/Anchor";
 
 import { BsTwitter } from "react-icons/bs";
 
@@ -10,7 +8,9 @@ export default function LadingPage() {
   return (
     <main className="w-full flex items-center justify-between">
       {/* BLUE SIDE */}
-      <div className="hidden sm:block sm:w-full min-h-screen bg-sky-500"></div>
+      <div className="hidden sm:flex w-full items-center justify-center min-h-screen bg-sky-500 p-2">
+        <BsTwitter size="300px" />
+      </div>
 
       {/* BLACK SIDE */}
       <div className="w-full flex flex-col sm:items-start items-center gap-8 p-8">
@@ -33,14 +33,8 @@ export default function LadingPage() {
 
         {/* BUTTONS CONTAINER */}
         <div className="sm:w-[350px] w-full flex flex-col gap-4">
-          <SignButton
-            text="Sign up with Google"
-            signMethod={SIGN_METHODS.GOOGLE}
-          />
-          <SignButton
-            text="Sign up with Apple"
-            signMethod={SIGN_METHODS.APPLE}
-          />
+          <Button text="Sign up with Google" variant="secondary" />
+          <Button text="Sign up with Apple" variant="secondary" />
 
           {/* OR */}
           <div className="w-full flex items-center justify-evenly overflow-hidden">
@@ -49,10 +43,7 @@ export default function LadingPage() {
             <Divider className="my-2 w-1/3" />
           </div>
 
-          <SignButton
-            text="Sign up with phone or email"
-            signMethod={SIGN_METHODS.EMAILNUMBER}
-          />
+          <Button text="Sign up with phone or email" variant="primary" />
 
           {/* TERMS OF USE */}
           <p className="text-xs text-center text-[#71767B] font-semibold">
@@ -64,11 +55,7 @@ export default function LadingPage() {
           {/* ALREADY HAVE AN ACCOUNT */}
           <div className="w-full flex flex-col gap-4">
             <p className="font-bold">Already have an account?</p>
-            <SignButton
-              text="Sign In"
-              signMethod={SIGN_METHODS.DEFAULT}
-              border
-            />
+            <Button text="Sign In" variant="default" border />
           </div>
         </div>
       </div>
