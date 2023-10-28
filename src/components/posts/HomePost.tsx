@@ -26,7 +26,7 @@ export const HomePost = ({ user }: IPost) => {
   return (
     <article
       onClick={handleArticleClick}
-      className="w-full flex justify-center overflow-hidden"
+      className="flex justify-center overflow-hidden"
     >
       <div className="sm:w-[600px] sm:border-[#2F3336] sm:border-l sm:border-r w-full flex gap-2 p-4 border-b border-b-[#2F3336] cursor-pointer overflow-hidden">
         {/* PROFILE PICTURE CONTAINER */}
