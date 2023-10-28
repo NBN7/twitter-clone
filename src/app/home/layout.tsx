@@ -9,6 +9,8 @@ export const metadata: Metadata = {
 };
 
 import { HomeNavbar } from "@/components/navbars/HomeNavbar";
+import { LeftAside } from "@/components/asides/LeftAside";
+import { RightAside } from "@/components/asides/RightAside";
 
 export default function RootLayout({
   children,
@@ -16,9 +18,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className={roboto.className}>
+    <div className={`${roboto.className} lg:flex block`}>
       <HomeNavbar />
+
+      <LeftAside />
       {children}
+      <RightAside />
     </div>
   );
 }

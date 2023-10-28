@@ -3,6 +3,8 @@ import { TUser } from "@/types/User";
 
 import { getAllUsers } from "@/utils/users/getAllUsers";
 
+import { AddTweetButton } from "@/components/buttons/AddTweetButton";
+
 export default async function HomePage() {
   const users = await getAllUsers();
 
@@ -11,6 +13,7 @@ export default async function HomePage() {
       {users.map((user: TUser) => (
         <HomePost key={user.id} user={user} />
       ))}
+      <AddTweetButton />
     </main>
   );
 }
