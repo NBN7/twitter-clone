@@ -33,8 +33,16 @@ export default function LandingPage() {
 
         {/* BUTTONS CONTAINER */}
         <div className="sm:w-[350px] w-full flex flex-col gap-4">
-          <Button text="Sign up with Google" variant="secondary" />
-          <Button text="Sign up with Apple" variant="secondary" />
+          <Button
+            logo="/google.png"
+            text="Sign up with Google"
+            variant="secondary"
+          />
+          <Button
+            logo="/apple.png"
+            text="Sign up with Apple"
+            variant="secondary"
+          />
 
           {/* OR */}
           <div className="w-full flex items-center justify-evenly overflow-hidden">
