@@ -24,10 +24,7 @@ export const HomePost = ({ user }: IPost) => {
   };
 
   return (
-    <article
-      onClick={handleArticleClick}
-      className="flex justify-center overflow-hidden"
-    >
+    <article className="flex justify-center overflow-hidden">
       <div className="sm:w-[600px] sm:border-[#2F3336] sm:border-l sm:border-r w-full flex gap-2 p-4 border-b border-b-[#2F3336] cursor-pointer overflow-hidden">
         {/* PROFILE PICTURE CONTAINER */}
         <div>
@@ -43,7 +40,7 @@ export const HomePost = ({ user }: IPost) => {
           </div>
 
           {/* POST BODY */}
-          <p>
+          <p onClick={handleArticleClick}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
             voluptates repellendus esse quisquam amet voluptate quibusdam
             mollitia at eos nihil laborum ad ducimus, accusantium minus, ullam
