@@ -18,7 +18,7 @@ import { User } from "@nextui-org/user";
 
 export const LeftAside = () => {
   return (
-    <aside className="lg:flex flex-col hidden w-full min-h-screen items-end justify-between">
+    <aside className="lg:flex flex-col hidden w-full min-h-screen items-end justify-between border-r border-r-[#2F3336]">
       <div className="sticky top-0 w-[300px] flex flex-col gap-10 p-4">
         <Link href="/home">
           <BsTwitter size="30px" />

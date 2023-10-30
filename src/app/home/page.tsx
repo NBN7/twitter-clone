@@ -11,6 +11,7 @@ export default async function HomePage() {
 
   return (
     <main id="home">
+      
       {users.map((user: TUser) => (
         <HomePost key={user.id} user={user} />
       ))}
