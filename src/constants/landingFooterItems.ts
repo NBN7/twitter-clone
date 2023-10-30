@@ -70,7 +70,7 @@ export const LANDING_FOOTER_ITEMS = [
     url: "https://twitter.com/settings/account",
   },
   {
-    name: `© ${year} UTN FRSN`,
+    name: `© ${year} Twitter Clone`,
     url: "https://twitter.com/",
   },
 ];
