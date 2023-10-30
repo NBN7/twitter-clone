@@ -1,4 +1,4 @@
-import type { TPost } from "@/types/Post";
+import type { TPost } from "@/types/post";
 
 export const getOnePost = async (id: number) => {
   const response = await fetch(

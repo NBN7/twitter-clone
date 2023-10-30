@@ -1,4 +1,4 @@
-import type { TPost } from "@/types/Post";
+import type { TPost } from "@/types/post";
 
 export const getAllPosts = async () => {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts", {

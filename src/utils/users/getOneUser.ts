@@ -1,4 +1,4 @@
-import type { TUser } from "@/types/User";
+import type { TUser } from "@/types/user";
 
 export const getOneUser = async (id: number) => {
   const response = await fetch(
