@@ -1,3 +1,5 @@
+"use client";
+
 import { BsTwitter } from "react-icons/bs";
 import { IoHome } from "react-icons/io5";
 import { BsHash } from "react-icons/bs";
@@ -9,14 +11,30 @@ import { HiOutlineUser } from "react-icons/hi2";
 import { CiCircleMore } from "react-icons/ci";
 import { BiDotsHorizontalRounded } from "react-icons/bi";
 
+import {
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  useDisclosure,
+  ModalContent,
+} from "@nextui-org/modal";
+
 import Link from "next/link";
 
 import { ListItem } from "../ListItem";
 import { Button } from "../buttons/Button";
 
 import { User } from "@nextui-org/user";
+import { Input } from "@nextui-org/input";
 
 export const LeftAside = () => {
+  const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
+
+  const handleClick = () => {
+    onClose();
+  };
+
   return (
     <aside className="lg:flex flex-col hidden w-full min-h-screen items-end justify-between border-r border-r-[#2F3336]">
       <div className="sticky top-0 w-[300px] flex flex-col gap-10 p-4">
@@ -66,7 +84,36 @@ export const LeftAside = () => {
           </ListItem>
 
           <div className="w-3/4">
-            <Button text="Tweet" variant="primary" />
+            <Button onClick={onOpen} text="Tweet" variant="primary" />
+
+            <Modal
+              placement="center"
+              scrollBehavior="inside"
+              isOpen={isOpen}
+              onOpenChange={onOpenChange}
+            >
+              <ModalContent>
+                <ModalHeader>Tweet</ModalHeader>
+
+                <ModalBody>
+                  <Input
+                    placeholder="What's happening?"
+                    variant="bordered"
+                    size="lg"
+                  />
+                </ModalBody>
+
+                <ModalFooter>
+                  <div className="w-[100px]">
+                    <Button
+                      onClick={handleClick}
+                      text="Tweet"
+                      variant="primary"
+                    />
+                  </div>
+                </ModalFooter>
+              </ModalContent>
+            </Modal>
           </div>
         </ul>
       </div>
