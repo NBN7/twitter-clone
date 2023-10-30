@@ -1,5 +1,5 @@
 import { HomePost } from "@/components/posts/HomePost";
-import { TUser } from "@/types/User";
+import { TUser } from "@/types/user";
 
 import { getAllUsers } from "@/utils/users/getAllUsers";
 
