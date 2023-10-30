@@ -4,6 +4,7 @@ import { TUser } from "@/types/user";
 import { getAllUsers } from "@/utils/users/getAllUsers";
 
 import { AddTweetButton } from "@/components/buttons/AddTweetButton";
+import { HomeFooter } from "@/components/footers/HomeFooter";
 
 export default async function HomePage() {
   const users = await getAllUsers();
@@ -14,6 +15,8 @@ export default async function HomePage() {
         <HomePost key={user.id} user={user} />
       ))}
       <AddTweetButton />
+
+      <HomeFooter />
     </main>
   );
 }
