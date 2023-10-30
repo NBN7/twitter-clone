@@ -1,4 +1,5 @@
 import { Anchor } from "../Anchor";
+
 import { LANDING_FOOTER_ITEMS } from "@/constants/landingFooterItems";
 
 export const LandingFooter = () => {

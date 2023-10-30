@@ -2,9 +2,9 @@
 
 import { Avatar } from "@nextui-org/avatar";
 import { BiLogoTwitter } from "react-icons/bi";
-import { FiSettings } from "react-icons/fi";
-
 import Link from "next/link";
+
+import { FiSettings } from "react-icons/fi";
 
 export const HomeNavbar = () => {
   return (

@@ -8,10 +8,11 @@ import {
   useDisclosure,
   ModalContent,
 } from "@nextui-org/modal";
+import { Input } from "@nextui-org/input";
+
+import { Button } from "./Button";
 
 import { AiOutlinePlus } from "react-icons/ai";
-import { Button } from "./Button";
-import { Input } from "@nextui-org/input";
 
 export const AddTweetButton = () => {
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();

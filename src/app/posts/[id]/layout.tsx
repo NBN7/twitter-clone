@@ -5,7 +5,7 @@ const roboto = Roboto({ weight: ["400", "700"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Tweet / Twitter",
-  description: "See what’s happening in the world right now",
+  description: "See what's happening in the world right now",
 };
 
 import { TweetNavbar } from "@/components/navbars/TweetNavbar";

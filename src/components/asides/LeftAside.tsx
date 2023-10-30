@@ -1,15 +1,6 @@
 "use client";
 
-import { BsTwitter } from "react-icons/bs";
-import { IoHome } from "react-icons/io5";
-import { BsHash } from "react-icons/bs";
-import { IoNotificationsOutline } from "react-icons/io5";
-import { HiOutlineMail } from "react-icons/hi";
-import { BiBookmark } from "react-icons/bi";
-import { HiOutlineMenuAlt2 } from "react-icons/hi";
-import { HiOutlineUser } from "react-icons/hi2";
-import { CiCircleMore } from "react-icons/ci";
-import { BiDotsHorizontalRounded } from "react-icons/bi";
+import Link from "next/link";
 
 import {
   Modal,
@@ -19,14 +10,18 @@ import {
   useDisclosure,
   ModalContent,
 } from "@nextui-org/modal";
-
-import Link from "next/link";
+import { User } from "@nextui-org/user";
+import { Input } from "@nextui-org/input";
 
 import { ListItem } from "../ListItem";
 import { Button } from "../buttons/Button";
 
-import { User } from "@nextui-org/user";
-import { Input } from "@nextui-org/input";
+import { BsTwitter, BsHash } from "react-icons/bs";
+import { IoHome, IoNotificationsOutline } from "react-icons/io5";
+import { HiOutlineMail, HiOutlineMenuAlt2 } from "react-icons/hi";
+import { HiOutlineUser } from "react-icons/hi2";
+import { BiBookmark, BiDotsHorizontalRounded } from "react-icons/bi";
+import { CiCircleMore } from "react-icons/ci";
 
 export const LeftAside = () => {
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
