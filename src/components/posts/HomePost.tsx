@@ -9,8 +9,8 @@ import { ShareButton } from "../buttons/ShareButton";
 
 import { Avatar } from "@nextui-org/avatar";
 
-import type { TUser } from "@/types/User";
-import type { TPost } from "@/types/Post";
+import type { TUser } from "@/types/user";
+import type { TPost } from "@/types/post";
 
 interface IPost {
   user: TUser;

@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 
 import { BUTTON_VARIANTS } from "@/constants/buttonVariants";
-import type { TButtonVariant } from "@/types/ButtonVariant";
+import type { TButtonVariant } from "@/types/buttonVariant";
 
 interface IButton {
   text: string;

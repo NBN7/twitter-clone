@@ -5,8 +5,8 @@ import { ShareButton } from "../buttons/ShareButton";
 
 import { Divider } from "@nextui-org/divider";
 
-import type { TUser } from "@/types/User";
-import type { TPost } from "@/types/Post";
+import type { TUser } from "@/types/user";
+import type { TPost } from "@/types/post";
 
 interface ITweerPost {
   user: TUser;
