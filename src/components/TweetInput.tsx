@@ -10,6 +10,7 @@ export const TweetInput = () => {
         <div className="flex items-center gap-4">
           <Avatar src="/luffy.png" />
           <Textarea
+            name="tweet"
             placeholder="What's happening?"
             variant="bordered"
             size="lg"

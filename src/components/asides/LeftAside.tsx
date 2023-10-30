@@ -11,7 +11,7 @@ import {
   ModalContent,
 } from "@nextui-org/modal";
 import { User } from "@nextui-org/user";
-import { Input } from "@nextui-org/input";
+import { Textarea } from "@nextui-org/input";
 
 import { ListItem } from "../ListItem";
 import { Button } from "../buttons/Button";
@@ -91,10 +91,12 @@ export const LeftAside = () => {
                 <ModalHeader>Tweet</ModalHeader>
 
                 <ModalBody>
-                  <Input
+                  <Textarea
+                    name="tweet"
                     placeholder="What's happening?"
                     variant="bordered"
                     size="lg"
+                    minRows={1}
                   />
                 </ModalBody>
 
