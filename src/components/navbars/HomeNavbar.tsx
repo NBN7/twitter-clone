@@ -2,7 +2,6 @@
 
 import { Avatar } from "@nextui-org/avatar";
 import { BiLogoTwitter } from "react-icons/bi";
-import Link from "next/link";
 
 import { FiSettings } from "react-icons/fi";
 
@@ -13,9 +12,9 @@ export const HomeNavbar = () => {
       <Avatar className="cursor-pointer" src="/luffy.png" size="sm" />
       {/* CENTER OF NAVBAR */}
 
-      <Link href="#home">
+      <button onClick={() => scroll(0, 0)}>
         <BiLogoTwitter size="30px" className="text-[#1EA0F1]" />
-      </Link>
+      </button>
 
       {/* RIGHT SIDE OF NAVBAR */}
       <button>

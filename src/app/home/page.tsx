@@ -11,7 +11,7 @@ export default async function HomePage() {
   const users = await getAllUsers();
 
   return (
-    <main id="home">
+    <main>
       <TweetInput />
 
       {users.map((user: TUser) => (
