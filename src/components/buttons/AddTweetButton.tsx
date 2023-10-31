@@ -8,7 +8,7 @@ import {
   useDisclosure,
   ModalContent,
 } from "@nextui-org/modal";
-import { Input } from "@nextui-org/input";
+import { Textarea } from "@nextui-org/input";
 
 import { Button } from "./Button";
 
@@ -40,10 +40,12 @@ export const AddTweetButton = () => {
           <ModalHeader>Tweet</ModalHeader>
 
           <ModalBody>
-            <Input
+            <Textarea
+              name="tweet"
               placeholder="What's happening?"
               variant="bordered"
               size="lg"
+              minRows={1}
             />
           </ModalBody>
 
