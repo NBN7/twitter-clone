@@ -4,7 +4,7 @@ interface IListItem {
   onClick?: () => void;
 }
 
-export const AsideItem = ({
+export const ItemContainer = ({
   children,
   isDisabled = false,
   onClick,
