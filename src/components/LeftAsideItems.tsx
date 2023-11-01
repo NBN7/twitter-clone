@@ -30,27 +30,27 @@ export const LeftAsideItems = () => {
         <span>Home</span>
       </ItemContainer>
 
-      <ItemContainer>
+      <ItemContainer isDisabled>
         <ExploreIcon />
         <span>Explore</span>
       </ItemContainer>
 
-      <ItemContainer>
+      <ItemContainer isDisabled>
         <NotificationsIcon />
         <span>Notifications</span>
       </ItemContainer>
 
-      <ItemContainer>
+      <ItemContainer isDisabled>
         <MessagesIcon />
         <span>Messages</span>
       </ItemContainer>
 
-      <ItemContainer>
+      <ItemContainer isDisabled>
         <BookmarkIcon />
         <span>Bookmarks</span>
       </ItemContainer>
 
-      <ItemContainer>
+      <ItemContainer isDisabled>
         <ListsIcon />
         <span>Lists</span>
       </ItemContainer>
@@ -60,7 +60,7 @@ export const LeftAsideItems = () => {
         <span>Profile</span>
       </ItemContainer>
 
-      <ItemContainer>
+      <ItemContainer isDisabled>
         <MoreIcon />
         <span>More</span>
       </ItemContainer>
