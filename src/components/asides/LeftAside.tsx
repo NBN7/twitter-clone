@@ -42,12 +42,10 @@ export const LeftAside = () => {
 
   const handleHomeClick = () => {
     changeActiveIcon(ICONS.HOME);
-    console.log(activeIcon);
   };
 
   const handleProfileClick = () => {
     changeActiveIcon(ICONS.PROFILE);
-    console.log(activeIcon);
   };
 
   return (
@@ -58,8 +56,8 @@ export const LeftAside = () => {
         </Link>
 
         <section className="flex flex-col gap-6">
-          <AsideItem>
-            <HomeIcon activeIcon={activeIcon} onClick={handleHomeClick} />
+          <AsideItem onClick={handleHomeClick}>
+            <HomeIcon activeIcon={activeIcon} />
             <span>Home</span>
           </AsideItem>
 
@@ -88,8 +86,8 @@ export const LeftAside = () => {
             <span>Lists</span>
           </AsideItem>
 
-          <AsideItem>
-            <ProfileIcon activeIcon={activeIcon} onClick={handleProfileClick} />
+          <AsideItem onClick={handleProfileClick}>
+            <ProfileIcon activeIcon={activeIcon} />
             <span>Profile</span>
           </AsideItem>
 
