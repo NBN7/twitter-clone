@@ -1,7 +1,5 @@
 "use client";
 
-import Link from "next/link";
-
 import {
   Modal,
   ModalHeader,
@@ -16,7 +14,6 @@ import { Button } from "../buttons/Button";
 import { LeftAsideItems } from "../LeftAsideItems";
 import { LeftAsideUser } from "../LeftAsideUser";
 
-import { BsTwitter } from "react-icons/bs";
 import { TwitterIcon } from "../icons/TwitterIcon";
 
 export const LeftAside = () => {
