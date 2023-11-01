@@ -16,7 +16,7 @@ import { Textarea } from "@nextui-org/input";
 import { useIcons } from "@/hooks/useIcons";
 import { ICONS } from "@/constants/icons";
 
-import { ListItem } from "../ListItem";
+import { AsideItem } from "../AsideItem";
 import { Button } from "../buttons/Button";
 
 import { HomeIcon } from "../icons/HomeIcon";
@@ -42,10 +42,12 @@ export const LeftAside = () => {
 
   const handleHomeClick = () => {
     changeActiveIcon(ICONS.HOME);
+    console.log(activeIcon);
   };
 
   const handleProfileClick = () => {
     changeActiveIcon(ICONS.PROFILE);
+    console.log(activeIcon);
   };
 
   return (
@@ -55,46 +57,46 @@ export const LeftAside = () => {
           <BsTwitter size="30px" />
         </Link>
 
-        <ul className="flex flex-col gap-6">
-          <ListItem>
+        <section className="flex flex-col gap-6">
+          <AsideItem>
             <HomeIcon activeIcon={activeIcon} onClick={handleHomeClick} />
             <span>Home</span>
-          </ListItem>
+          </AsideItem>
 
-          <ListItem isDisabled>
+          <AsideItem>
             <ExploreIcon />
             <span>Explore</span>
-          </ListItem>
+          </AsideItem>
 
-          <ListItem isDisabled>
+          <AsideItem>
             <NotificationsIcon />
             <span>Notifications</span>
-          </ListItem>
+          </AsideItem>
 
-          <ListItem isDisabled>
+          <AsideItem>
             <MessagesIcon />
             <span>Messages</span>
-          </ListItem>
+          </AsideItem>
 
-          <ListItem isDisabled>
+          <AsideItem>
             <BookmarkIcon />
             <span>Bookmarks</span>
-          </ListItem>
+          </AsideItem>
 
-          <ListItem isDisabled>
+          <AsideItem>
             <ListsIcon />
             <span>Lists</span>
-          </ListItem>
+          </AsideItem>
 
-          <ListItem>
+          <AsideItem>
             <ProfileIcon activeIcon={activeIcon} onClick={handleProfileClick} />
             <span>Profile</span>
-          </ListItem>
+          </AsideItem>
 
-          <ListItem isDisabled>
+          <AsideItem>
             <MoreIcon />
             <span>More</span>
-          </ListItem>
+          </AsideItem>
 
           <div className="w-3/4">
             <Button onClick={onOpen} text="Tweet" variant="primary" />
@@ -130,7 +132,7 @@ export const LeftAside = () => {
               </ModalContent>
             </Modal>
           </div>
-        </ul>
+        </section>
       </div>
 
       <div className="sticky bottom-0 w-[300px] flex flex-col gap-10 p-4">

@@ -3,14 +3,14 @@ interface IListItem {
   isDisabled?: boolean;
 }
 
-export const ListItem = ({ children, isDisabled = false }: IListItem) => {
+export const AsideItem = ({ children, isDisabled = false }: IListItem) => {
   return (
-    <li
+    <div
       className={`flex items-center gap-4 ${
         isDisabled ? "cursor-not-allowed" : "cursor-pointer"
       }`}
     >
       {children}
-    </li>
+    </div>
   );
 };
