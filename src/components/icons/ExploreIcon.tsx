@@ -1,5 +1,5 @@
-import { BsHash } from "react-icons/bs";
+import { BiSearch } from "react-icons/bi";
 
 export const ExploreIcon = () => {
-  return <BsHash size="30px" />;
+  return <BiSearch size="30px" />;
 };
