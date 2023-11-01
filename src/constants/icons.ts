@@ -1,4 +1,4 @@
-export const FOOTER_ICONS = {
+export const ICONS = {
   HOME: "home",
   NOTIFICATIONS: "notifications",
   MESSAGES: "messages",
