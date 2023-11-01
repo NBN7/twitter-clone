@@ -49,14 +49,14 @@ export default function LandingPage() {
           {/* BUTTONS CONTAINER */}
           <div className="sm:w-[350px] w-full flex flex-col gap-4">
             <Button
-              logo="/google.png"
+              logo="./assets/google.png"
               text="Sign up with Google"
               variant="secondary"
               onClick={handleSignUpClick}
             />
 
             <Button
-              logo="/apple.png"
+              logo="./assets/apple.png"
               text="Sign up with Apple"
               variant="secondary"
               onClick={handleSignUpClick}
@@ -97,8 +97,8 @@ export default function LandingPage() {
         </div>
       </main>
 
-      {/* FOOTER */}
       <LandingFooter />
+      {/* FOOTER */}
     </>
   );
 }

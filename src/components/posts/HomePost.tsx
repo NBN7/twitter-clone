@@ -28,7 +28,7 @@ export const HomePost = ({ user }: IPost) => {
       <div className="sm:w-[600px] sm:border-[#2F3336] border-b border-b-[#2F3336] w-full flex gap-2 p-4 cursor-pointer overflow-hidden">
         {/* PROFILE PICTURE CONTAINER */}
         <div>
-          <Avatar src="/luffy.png" />
+          <Avatar src="./assets/luffy.png" />
         </div>
 
         {/* POST CONTENT CONTAINER */}

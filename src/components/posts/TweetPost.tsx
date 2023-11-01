@@ -22,7 +22,7 @@ export const TweetPost = ({ user }: ITweerPost) => {
           name={user.name}
           description={`@${user.username}`}
           avatarProps={{
-            src: "/luffy.png",
+            src: "./assets/luffy.png",
             alt: "Luffy",
             size: "lg",
           }}

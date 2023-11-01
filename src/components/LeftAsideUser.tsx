@@ -10,7 +10,7 @@ export const LeftAsideUser = () => {
           name="User Name"
           description="@username"
           avatarProps={{
-            src: "/luffy.png",
+            src: "./assets/luffy.png",
             alt: "profile picture",
             size: "lg",
           }}
