@@ -6,7 +6,7 @@ import { FOOTER_ICONS } from "@/constants/icons";
 
 import { HomeIcon } from "../icons/HomeIcon";
 import { NotificationsIcon } from "../icons/NotificationsIcon";
-import { MessagesIcon } from "../MessagesIcon";
+import { MessagesIcon } from "../icons/MessagesIcon";
 import { ProfileIcon } from "../icons/ProfileIcon";
 
 export const HomeFooter = () => {
