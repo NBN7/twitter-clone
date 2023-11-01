@@ -17,6 +17,7 @@ import { LeftAsideItems } from "../LeftAsideItems";
 import { LeftAsideUser } from "../LeftAsideUser";
 
 import { BsTwitter } from "react-icons/bs";
+import { TwitterIcon } from "../icons/TwitterIcon";
 
 export const LeftAside = () => {
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
@@ -28,15 +29,13 @@ export const LeftAside = () => {
   return (
     <aside className="lg:flex flex-col hidden w-full min-h-screen items-end justify-between border-r border-r-[#2F3336]">
       <div className="sticky top-0 w-[300px] flex flex-col gap-10 p-4">
-        <Link href="/home">
-          <BsTwitter size="30px" />
-        </Link>
-
+        <TwitterIcon />
         <LeftAsideItems />
 
-        {/* MODAL */}
         <div className="w-3/4">
           <Button onClick={onOpen} text="Tweet" variant="primary" />
+
+          {/* MODAL */}
           <Modal
             placement="center"
             scrollBehavior="inside"
@@ -67,8 +66,8 @@ export const LeftAside = () => {
               </ModalFooter>
             </ModalContent>
           </Modal>
+          {/* MODAL END */}
         </div>
-        {/* MODAL END */}
       </div>
 
       <LeftAsideUser />
