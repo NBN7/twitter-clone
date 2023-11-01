@@ -53,7 +53,7 @@ export const LeftAsideUser = () => {
 
           <ModalFooter>
             <div className="w-[100px]">
-              <Button onClick={onClose} text="Log out" variant="default" />
+              <Button onClick={handleClick} text="Log out" variant="default" />
             </div>
           </ModalFooter>
         </ModalContent>
