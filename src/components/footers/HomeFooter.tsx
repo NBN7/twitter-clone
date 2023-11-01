@@ -2,7 +2,7 @@
 
 import { useIcons } from "@/hooks/useIcons";
 
-import { FOOTER_ICONS } from "@/constants/icons";
+import { ICONS } from "@/constants/icons";
 
 import { HomeIcon } from "../icons/HomeIcon";
 import { NotificationsIcon } from "../icons/NotificationsIcon";
@@ -13,11 +13,11 @@ export const HomeFooter = () => {
   const { activeIcon, changeActiveIcon } = useIcons();
 
   const handleHomeClick = () => {
-    changeActiveIcon(FOOTER_ICONS.HOME);
+    changeActiveIcon(ICONS.HOME);
   };
 
   const handleProfileClick = () => {
-    changeActiveIcon(FOOTER_ICONS.PROFILE);
+    changeActiveIcon(ICONS.PROFILE);
   };
 
   return (
