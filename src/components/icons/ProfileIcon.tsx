@@ -1,13 +1,18 @@
 "use client";
 
-import { FOOTER_ICONS } from "@/constants/icons";
+import { ICONS } from "@/constants/icons";
 
 import { HiOutlineUser, HiUser } from "react-icons/hi2";
 
-export const ProfileIcon = ({ activeIcon, onClick }: any) => {
+interface IProfileIcon {
+  activeIcon: string;
+  onClick: () => void;
+}
+
+export const ProfileIcon = ({ activeIcon, onClick }: IProfileIcon) => {
   return (
     <button onClick={onClick}>
-      {activeIcon === FOOTER_ICONS.PROFILE ? (
+      {activeIcon === ICONS.PROFILE ? (
         <HiUser size="30px" />
       ) : (
         <HiOutlineUser size="30px" />
