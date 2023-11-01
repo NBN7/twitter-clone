@@ -13,21 +13,39 @@ import {
 import { User } from "@nextui-org/user";
 import { Textarea } from "@nextui-org/input";
 
+import { useIcons } from "@/hooks/useIcons";
+import { ICONS } from "@/constants/icons";
+
 import { ListItem } from "../ListItem";
 import { Button } from "../buttons/Button";
 
-import { BsTwitter, BsHash } from "react-icons/bs";
-import { IoHome, IoNotificationsOutline } from "react-icons/io5";
-import { HiOutlineMail, HiOutlineMenuAlt2 } from "react-icons/hi";
-import { HiOutlineUser } from "react-icons/hi2";
-import { BiBookmark, BiDotsHorizontalRounded } from "react-icons/bi";
-import { CiCircleMore } from "react-icons/ci";
+import { HomeIcon } from "../icons/HomeIcon";
+import { NotificationsIcon } from "../icons/NotificationsIcon";
+import { MessagesIcon } from "../icons/MessagesIcon";
+import { ProfileIcon } from "../icons/ProfileIcon";
+import { ExploreIcon } from "../icons/ExploreIcon";
+import { MoreIcon } from "../icons/MoreIcon";
+import { ListsIcon } from "../icons/ListsIcon";
+import { BookmarkIcon } from "../icons/BookmarkIcon";
+
+import { BsTwitter } from "react-icons/bs";
+import { BiDotsHorizontalRounded } from "react-icons/bi";
 
 export const LeftAside = () => {
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
 
+  const { activeIcon, changeActiveIcon } = useIcons();
+
   const handleClick = () => {
     onClose();
+  };
+
+  const handleHomeClick = () => {
+    changeActiveIcon(ICONS.HOME);
+  };
+
+  const handleProfileClick = () => {
+    changeActiveIcon(ICONS.PROFILE);
   };
 
   return (
@@ -39,42 +57,42 @@ export const LeftAside = () => {
 
         <ul className="flex flex-col gap-6">
           <ListItem>
-            <IoHome size="30px" />
+            <HomeIcon activeIcon={activeIcon} onClick={handleHomeClick} />
             <span>Home</span>
           </ListItem>
 
           <ListItem isDisabled>
-            <BsHash size="30px" />
+            <ExploreIcon />
             <span>Explore</span>
           </ListItem>
 
           <ListItem isDisabled>
-            <IoNotificationsOutline size="30px" />
+            <NotificationsIcon />
             <span>Notifications</span>
           </ListItem>
 
           <ListItem isDisabled>
-            <HiOutlineMail size="30px" />
+            <MessagesIcon />
             <span>Messages</span>
           </ListItem>
 
           <ListItem isDisabled>
-            <BiBookmark size="30px" />
+            <BookmarkIcon />
             <span>Bookmarks</span>
           </ListItem>
 
           <ListItem isDisabled>
-            <HiOutlineMenuAlt2 size="30px" />
+            <ListsIcon />
             <span>Lists</span>
           </ListItem>
 
           <ListItem>
-            <HiOutlineUser size="30px" />
+            <ProfileIcon activeIcon={activeIcon} onClick={handleProfileClick} />
             <span>Profile</span>
           </ListItem>
 
           <ListItem isDisabled>
-            <CiCircleMore size="30px" />
+            <MoreIcon />
             <span>More</span>
           </ListItem>
 
