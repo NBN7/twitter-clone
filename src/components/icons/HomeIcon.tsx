@@ -6,7 +6,7 @@ import { GoHome, GoHomeFill } from "react-icons/go";
 
 interface IHomeIcon {
   activeIcon: string;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 export const HomeIcon = ({ activeIcon, onClick }: IHomeIcon) => {

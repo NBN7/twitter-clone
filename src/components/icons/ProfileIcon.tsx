@@ -6,7 +6,7 @@ import { HiOutlineUser, HiUser } from "react-icons/hi2";
 
 interface IProfileIcon {
   activeIcon: string;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 export const ProfileIcon = ({ activeIcon, onClick }: IProfileIcon) => {
