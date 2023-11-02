@@ -24,7 +24,7 @@ export const LeftAsideItems = () => {
   };
 
   return (
-    <section className="flex flex-col gap-6">
+    <section className="flex flex-col">
       <ItemContainer onClick={handleHomeClick}>
         <HomeIcon activeIcon={activeIcon} />
         <span>Home</span>

@@ -25,7 +25,7 @@ export const LeftAsideUser = () => {
     <div className="sticky bottom-0 w-[300px] flex flex-col gap-10 p-4">
       <div
         onClick={onOpen}
-        className="flex items-center justify-between cursor-pointer"
+        className="flex items-center justify-between cursor-pointer hover:bg-[#181818] px-2 py-1 rounded-full"
       >
         <User
           name="User Name"

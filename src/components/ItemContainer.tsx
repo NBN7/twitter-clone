@@ -12,9 +12,8 @@ export const ItemContainer = ({
   return (
     <div
       onClick={onClick}
-      className={`flex items-center gap-4 ${
-        isDisabled ? "cursor-not-allowed" : "cursor-pointer"
-      }`}
+      className={`flex items-center gap-4 hover:bg-[#181818] p-4 rounded-full 
+      ${isDisabled ? "cursor-not-allowed" : "cursor-pointer"}`}
     >
       {children}
     </div>
