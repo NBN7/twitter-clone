@@ -46,6 +46,7 @@ export const AddTweetButton = () => {
               variant="bordered"
               size="lg"
               minRows={1}
+              label=""
             />
           </ModalBody>
 

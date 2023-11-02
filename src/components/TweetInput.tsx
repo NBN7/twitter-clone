@@ -18,6 +18,7 @@ export const TweetInput = () => {
             variant="bordered"
             size="lg"
             minRows={1}
+            label=""
           />
         </div>
 
