@@ -1,6 +1,6 @@
 import { TweetPost } from "@/components/posts/TweetPost";
 
-import { getOneUser } from "@/utils/users/getOneUser";
+import { getOneUser } from "@/services/getOneUser";
 
 import type { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 

@@ -1,7 +1,7 @@
 import { HomePost } from "@/components/posts/HomePost";
 import { TUser } from "@/types/user";
 
-import { getAllUsers } from "@/utils/users/getAllUsers";
+import { getAllUsers } from "@/services/getAllUsers";
 
 import { AddTweetButton } from "@/components/buttons/AddTweetButton";
 import { HomeFooter } from "@/components/footers/HomeFooter";
