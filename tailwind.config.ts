@@ -9,7 +9,15 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
-  theme: {},
+  theme: {
+    extend: {
+      screens: {
+        "custom-screen": {
+          raw: "((max-width: 1280px) and (max-height: 750px))",
+        },
+      },
+    },
+  },
   plugins: [
     nextui({
       defaultTheme: "dark",
