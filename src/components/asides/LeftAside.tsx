@@ -25,7 +25,7 @@ export const LeftAside = () => {
 
   return (
     <aside className="lg:flex flex-col hidden w-full min-h-screen items-end justify-between border-r border-r-[#2F3336]">
-      <div className="sticky top-0 w-[300px] flex flex-col gap-10 p-4">
+      <div className="sticky top-0 w-[300px] flex flex-col custom-screen:gap-5 gap-10 p-4">
         <TwitterIcon />
         <LeftAsideItems />
 
