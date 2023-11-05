@@ -1,5 +1,7 @@
 "use client";
 
+import { useId } from "react";
+
 import {
   Modal,
   ModalHeader,
@@ -16,6 +18,8 @@ import { AiOutlinePlus } from "react-icons/ai";
 
 export const AddTweetButton = () => {
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
+
+  const id = useId();
 
   const handleClick = () => {
     onClose();
@@ -41,12 +45,11 @@ export const AddTweetButton = () => {
 
           <ModalBody>
             <Textarea
-              name="tweet"
+              id={id}
               placeholder="What's happening?"
               variant="bordered"
               size="lg"
               minRows={1}
-              label=""
             />
           </ModalBody>
 

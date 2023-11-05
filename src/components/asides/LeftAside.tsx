@@ -1,5 +1,7 @@
 "use client";
 
+import { useId } from "react";
+
 import {
   Modal,
   ModalHeader,
@@ -18,6 +20,8 @@ import { TwitterIcon } from "../icons/TwitterIcon";
 
 export const LeftAside = () => {
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
+
+  const id = useId();
 
   const handleTweetClick = () => {
     onClose();
@@ -44,11 +48,12 @@ export const LeftAside = () => {
 
               <ModalBody>
                 <Textarea
-                  name="tweet"
+                  id={id}
                   placeholder="What's happening?"
                   variant="bordered"
                   size="lg"
                   minRows={1}
+                  label=""
                 />
               </ModalBody>
 

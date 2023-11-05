@@ -1,9 +1,13 @@
+import { useId } from "react";
+
 import { Avatar } from "@nextui-org/avatar";
 import { Textarea } from "@nextui-org/input";
 
 import { Button } from "./buttons/Button";
 
 export const TweetInput = () => {
+  const id = useId();
+
   return (
     <section className="lg:flex hidden justify-center overflow-hidden">
       <div className="w-[600px] sm:border-[#2F3336] border-b border-b-[#2F3336] flex flex-col gap-6 p-4 overflow-hidden">
@@ -13,12 +17,11 @@ export const TweetInput = () => {
           </div>
 
           <Textarea
-            name="tweet"
+            id={id}
             placeholder="What's happening?"
             variant="bordered"
             size="lg"
             minRows={1}
-            label=""
           />
         </div>
 
