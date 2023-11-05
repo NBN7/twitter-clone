@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { signIn } from "next-auth/react";
 
 import { Button } from "@/components/buttons/Button";
 import { Divider } from "@nextui-org/react";
@@ -52,7 +53,7 @@ export default function LandingPage() {
               logo="./assets/google.png"
               text="Sign up with Google"
               variant="secondary"
-              onClick={handleSignUpClick}
+              onClick={() => signIn("google", { callbackUrl: "/home" })}
             />
 
             <Button
