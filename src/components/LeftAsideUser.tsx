@@ -1,5 +1,8 @@
 "use client";
 
+import { useSession } from "next-auth/react";
+import { signOut } from "next-auth/react";
+
 import {
   Modal,
   ModalHeader,
@@ -15,6 +18,8 @@ import { Button } from "./buttons/Button";
 import { BiDotsHorizontalRounded } from "react-icons/bi";
 
 export const LeftAsideUser = () => {
+  const { data: session } = useSession();
+
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
 
   const handleClick = () => {
@@ -28,10 +33,10 @@ export const LeftAsideUser = () => {
         className="flex items-center justify-between cursor-pointer hover:bg-[#181818] px-2 py-1 rounded-full"
       >
         <User
-          name="User Name"
+          name={session?.user?.name as string}
           description="@username"
           avatarProps={{
-            src: "./assets/luffy.png",
+            src: session?.user?.image as string,
             alt: "profile picture",
             size: "lg",
           }}
@@ -53,7 +58,15 @@ export const LeftAsideUser = () => {
 
           <ModalFooter>
             <div className="w-[100px]">
-              <Button onClick={handleClick} text="Log out" variant="default" />
+              <Button
+                onClick={() =>
+                  signOut({
+                    callbackUrl: "http://localhost:3000",
+                  })
+                }
+                text="Log out"
+                variant="default"
+              />
             </div>
           </ModalFooter>
         </ModalContent>

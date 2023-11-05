@@ -1,5 +1,8 @@
 "use client";
 
+import { useSession } from "next-auth/react";
+import { signOut } from "next-auth/react";
+
 import {
   Modal,
   ModalHeader,
@@ -16,18 +19,16 @@ import { BiLogoTwitter } from "react-icons/bi";
 import { FiSettings } from "react-icons/fi";
 
 export const HomeNavbar = () => {
-  const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
+  const { data: session } = useSession();
 
-  const handleClick = () => {
-    onClose();
-  };
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   return (
     <nav className="lg:hidden w-full flex justify-between py-4 px-6 items-center backdrop-blur-lg border-b border-b-[#2F3336] sticky top-0 z-50">
       <Avatar
         onClick={onOpen}
         className="cursor-pointer"
-        src="/assets/luffy.png"
+        src={session?.user?.image as string}
         size="sm"
       />
 
@@ -52,7 +53,15 @@ export const HomeNavbar = () => {
 
           <ModalFooter>
             <div className="w-[100px]">
-              <Button onClick={handleClick} text="Log out" variant="default" />
+              <Button
+                onClick={() =>
+                  signOut({
+                    callbackUrl: "/",
+                  })
+                }
+                text="Log out"
+                variant="default"
+              />
             </div>
           </ModalFooter>
         </ModalContent>

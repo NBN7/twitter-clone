@@ -19,9 +19,9 @@ import { LeftAsideUser } from "../LeftAsideUser";
 import { TwitterIcon } from "../icons/TwitterIcon";
 
 export const LeftAside = () => {
-  const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
-
   const id = useId();
+
+  const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
 
   const handleTweetClick = () => {
     onClose();

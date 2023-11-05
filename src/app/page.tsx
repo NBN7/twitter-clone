@@ -1,6 +1,5 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 
 import { Button } from "@/components/buttons/Button";
@@ -11,15 +10,10 @@ import { LandingFooter } from "@/components/footers/LandingFooter";
 import { BsTwitter } from "react-icons/bs";
 
 export default function LandingPage() {
-  const router = useRouter();
-
-  const handleSignUpClick = () => {
-    router.push("/home");
+  const handleSignClick = () => {
+    signIn("google", { callbackUrl: "/home" });
   };
 
-  const handleSignInClick = () => {
-    router.push("/home");
-  };
   return (
     <>
       <main className="w-full flex items-center justify-between">
@@ -53,14 +47,13 @@ export default function LandingPage() {
               logo="./assets/google.png"
               text="Sign up with Google"
               variant="secondary"
-              onClick={() => signIn("google", { callbackUrl: "/home" })}
+              onClick={handleSignClick}
             />
 
             <Button
               logo="./assets/apple.png"
               text="Sign up with Apple"
               variant="secondary"
-              onClick={handleSignUpClick}
             />
 
             {/* OR */}
@@ -73,7 +66,7 @@ export default function LandingPage() {
             <Button
               text="Sign up with phone or email"
               variant="primary"
-              onClick={handleSignUpClick}
+              onClick={handleSignClick}
             />
 
             {/* TERMS OF USE */}
@@ -91,7 +84,7 @@ export default function LandingPage() {
                 text="Sign In"
                 variant="default"
                 border
-                onClick={handleSignInClick}
+                onClick={handleSignClick}
               />
             </div>
           </div>

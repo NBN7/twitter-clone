@@ -8,22 +8,26 @@ export const metadata: Metadata = {
   description: "See what's happening in the world right now",
 };
 
+import { AuthProviders } from "../AuthProviders";
+
 import { HomeNavbar } from "@/components/navbars/HomeNavbar";
 import { LeftAside } from "@/components/asides/LeftAside";
 import { RightAside } from "@/components/asides/RightAside";
 
-export default function RootLayout({
-  children,
-}: {
+interface IHomeLayout {
   children: React.ReactNode;
-}) {
-  return (
-    <div className={`${roboto.className} lg:flex block`}>
-      <HomeNavbar />
+}
 
-      <LeftAside />
-      {children}
-      <RightAside />
-    </div>
+export default function RootLayout({ children }: IHomeLayout) {
+  return (
+    <AuthProviders>
+      <div className={`${roboto.className} lg:flex block`}>
+        <HomeNavbar />
+
+        <LeftAside />
+        {children}
+        <RightAside />
+      </div>
+    </AuthProviders>
   );
 }
