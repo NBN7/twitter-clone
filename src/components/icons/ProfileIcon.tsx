@@ -1,6 +1,7 @@
 "use client";
 
 import { ICONS } from "@/constants/icons";
+import { iconsStyle } from "@/style/iconsStyle";
 
 import { HiOutlineUser, HiUser } from "react-icons/hi2";
 
@@ -13,9 +14,9 @@ export const ProfileIcon = ({ activeIcon, onClick }: IProfileIcon) => {
   return (
     <button onClick={onClick}>
       {activeIcon === ICONS.PROFILE ? (
-        <HiUser size="30px" />
+        <HiUser className={iconsStyle} size="30px" />
       ) : (
-        <HiOutlineUser size="30px" />
+        <HiOutlineUser className={iconsStyle} size="30px" />
       )}
     </button>
   );
