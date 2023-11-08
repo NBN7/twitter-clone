@@ -1,6 +1,12 @@
 export type TPost = {
   id: number;
-  title: string;
-  body: string;
-  userId: number;
+  userName: string;
+  firstName: string;
+  lastName: string;
+  image: string;
+  createdAt: Date;
+  tweetText: string;
+  numLikes: number;
+  numReposts: number;
+  numComments: number;
 };

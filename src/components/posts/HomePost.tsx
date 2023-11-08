@@ -9,18 +9,17 @@ import { ShareButton } from "../buttons/ShareButton";
 
 import { Avatar } from "@nextui-org/avatar";
 
-import type { TUser } from "@/types/user";
 import type { TPost } from "@/types/post";
 
 interface IPost {
-  user: TUser;
+  post: TPost;
 }
 
-export const HomePost = ({ user }: IPost) => {
+export const HomePost = ({ post }: IPost) => {
   const router = useRouter();
 
   const handleArticleClick = () => {
-    router.push(`/posts/${user.id}`);
+    router.push(`/posts/${post.id}`);
   };
 
   return (
@@ -35,21 +34,14 @@ export const HomePost = ({ user }: IPost) => {
         <div className="w-full overflow-hidden">
           {/* POST HEADER */}
           <div className="w-full flex gap-2 overflow-hidden">
-            <h2 className="font-bold truncate">{user.name}</h2>
-            <h3 className="text-[#71767B] truncate">@{user.username}</h3>
+            <h2 className="font-bold truncate">
+              {post.firstName} {post.lastName}
+            </h2>
+            <h3 className="text-[#71767B] truncate">@{post.userName}</h3>
           </div>
 
           {/* POST BODY */}
-          <p onClick={handleArticleClick}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
-            voluptates repellendus esse quisquam amet voluptate quibusdam
-            mollitia at eos nihil laborum ad ducimus, accusantium minus, ullam
-            inventore vitae laboriosam quidem. Quas eveniet repellat sed
-            laborum, dolorem quia optio fugiat pariatur quidem voluptates
-            assumenda dolores cupiditate obcaecati magnam vero eius sunt
-            necessitatibus molestias temporibus similique eum delectus
-            laudantium iusto. Quos, nulla!
-          </p>
+          <p onClick={handleArticleClick}>{post.tweetText}</p>
 
           {/* POST FOOTER */}
           <div className="w-full flex justify-between items-center mt-2 text-[#71767B]">

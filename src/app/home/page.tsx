@@ -1,21 +1,23 @@
 import { HomePost } from "@/components/posts/HomePost";
-import { TUser } from "@/types/user";
+import type { TPost } from "@/types/post";
 
-import { getAllUsers } from "@/services/getAllUsers";
+import { getAllPosts } from "@/services/getAllPosts";
 
 import { AddTweetButton } from "@/components/buttons/AddTweetButton";
 import { HomeFooter } from "@/components/footers/HomeFooter";
 import { TweetInput } from "@/components/TweetInput";
 
 export default async function HomePage() {
-  const users = await getAllUsers();
+  const posts = await getAllPosts();
+
+  console.log(posts);
 
   return (
     <main>
       <TweetInput />
 
-      {users.map((user: TUser) => (
-        <HomePost key={user.id} user={user} />
+      {posts.map((post: TPost) => (
+        <HomePost key={post.id} post={post} />
       ))}
       <AddTweetButton />
 
