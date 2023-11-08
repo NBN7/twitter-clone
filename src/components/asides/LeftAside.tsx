@@ -36,7 +36,6 @@ export const LeftAside = () => {
         <div className="w-3/4">
           <Button onClick={onOpen} text="Tweet" variant="primary" />
 
-          {/* MODAL */}
           <Modal
             placement="center"
             scrollBehavior="inside"
@@ -68,7 +67,6 @@ export const LeftAside = () => {
               </ModalFooter>
             </ModalContent>
           </Modal>
-          {/* MODAL END */}
         </div>
       </div>
 
