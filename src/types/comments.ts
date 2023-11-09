@@ -1,6 +1,4 @@
-import type { TComment } from "./comments";
-
-export type TPost = {
+export type TComment = {
   id: number;
   userName: string;
   firstName: string;
@@ -11,5 +9,5 @@ export type TPost = {
   numLikes: number;
   numReposts: number;
   numComments: number;
-  comments: TComment[];
+  comments: [];
 };

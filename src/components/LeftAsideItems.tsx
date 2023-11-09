@@ -1,7 +1,8 @@
-import { ItemContainer } from "./ItemContainer";
+import Link from "next/link";
 
-import { useIcons } from "@/hooks/useIcons";
-import { ICONS } from "@/constants/icons";
+import { useUserContext } from "@/context/userContext";
+
+import { ItemContainer } from "./ItemContainer";
 
 import { BookmarkIcon } from "./icons/BookmarkIcon";
 import { ExploreIcon } from "./icons/ExploreIcon";
@@ -13,22 +14,16 @@ import { NotificationsIcon } from "./icons/NotificationsIcon";
 import { ProfileIcon } from "./icons/ProfileIcon";
 
 export const LeftAsideItems = () => {
-  const { activeIcon, changeActiveIcon } = useIcons();
-
-  const handleHomeClick = () => {
-    changeActiveIcon(ICONS.HOME);
-  };
-
-  const handleProfileClick = () => {
-    changeActiveIcon(ICONS.PROFILE);
-  };
+  const { username } = useUserContext();
 
   return (
     <section className="flex flex-col">
-      <ItemContainer onClick={handleHomeClick}>
-        <HomeIcon activeIcon={activeIcon} />
-        <span>Home</span>
-      </ItemContainer>
+      <Link href="/home">
+        <ItemContainer>
+          <HomeIcon />
+          <span>Home</span>
+        </ItemContainer>
+      </Link>
 
       <ItemContainer isDisabled>
         <ExploreIcon />
@@ -55,10 +50,12 @@ export const LeftAsideItems = () => {
         <span>Lists</span>
       </ItemContainer>
 
-      <ItemContainer onClick={handleProfileClick}>
-        <ProfileIcon activeIcon={activeIcon} />
-        <span>Profile</span>
-      </ItemContainer>
+      <Link href={`/users/${username}`}>
+        <ItemContainer>
+          <ProfileIcon />
+          <span>Profile</span>
+        </ItemContainer>
+      </Link>
 
       <ItemContainer isDisabled>
         <MoreIcon />

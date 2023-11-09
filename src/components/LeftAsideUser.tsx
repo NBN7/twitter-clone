@@ -15,16 +15,16 @@ import { User } from "@nextui-org/user";
 
 import { Button } from "./buttons/Button";
 
+import { useUserContext } from "@/context/userContext";
+
 import { BiDotsHorizontalRounded } from "react-icons/bi";
 
 export const LeftAsideUser = () => {
   const { data: session } = useSession();
 
-  const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
+  const { username } = useUserContext();
 
-  const handleClick = () => {
-    onClose();
-  };
+  const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
 
   return (
     <div className="sticky bottom-0 w-[300px] flex flex-col gap-10 p-4">
@@ -34,7 +34,7 @@ export const LeftAsideUser = () => {
       >
         <User
           name={session?.user?.name as string}
-          description="@username"
+          description={username as string}
           avatarProps={{
             src: session?.user?.image as string,
             alt: "profile picture",

@@ -1,22 +1,24 @@
 "use client";
 
-import { ICONS } from "@/constants/icons";
-import { iconsStyle } from "@/style/iconsStyle";
+import { usePathname } from "next/navigation";
 
 import { HiOutlineUser, HiUser } from "react-icons/hi2";
 
-interface IProfileIcon {
-  activeIcon: string;
-  onClick?: () => void;
-}
+export const ProfileIcon = () => {
+  const pathname = usePathname();
 
-export const ProfileIcon = ({ activeIcon, onClick }: IProfileIcon) => {
   return (
-    <button onClick={onClick}>
-      {activeIcon === ICONS.PROFILE ? (
-        <HiUser className={iconsStyle} size="30px" />
+    <button>
+      {pathname.includes("/users") ? (
+        <HiUser
+          className="active:scale-80 transition-all duration-200"
+          size="30px"
+        />
       ) : (
-        <HiOutlineUser className={iconsStyle} size="30px" />
+        <HiOutlineUser
+          className="active:scale-80 transition-all duration-200"
+          size="30px"
+        />
       )}
     </button>
   );

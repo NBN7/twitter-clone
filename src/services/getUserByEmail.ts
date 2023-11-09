@@ -1,8 +1,8 @@
 import type { TUser } from "@/types/user";
 
-export const getOneUser = async (username: string) => {
+export const getUserByEmail = async (email: string) => {
   const response = await fetch(
-    `https://jsonplaceholder.typicode.com/users/${username}`,
+    `https://localhost:7285/api/users/email/${email}`,
     {
       cache: "no-cache",
     }

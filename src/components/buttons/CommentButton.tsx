@@ -1,8 +1,12 @@
 import { BiMessageRounded } from "react-icons/bi";
 
-export const CommentButton = () => {
+interface ICommentButton {
+  onClick?: () => void;
+}
+
+export const CommentButton = ({ onClick }: ICommentButton) => {
   return (
-    <button>
+    <button onClick={onClick}>
       <BiMessageRounded size="20px" />
     </button>
   );

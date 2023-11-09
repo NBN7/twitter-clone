@@ -1,6 +1,12 @@
 "use client";
 
-import { useId } from "react";
+import { useId, useState } from "react";
+
+import { useRouter } from "next/navigation";
+
+import { useTweetButton } from "@/hooks/useTweetButton";
+
+import { useUserContext } from "@/context/userContext";
 
 import {
   Modal,
@@ -17,12 +23,34 @@ import { Button } from "./Button";
 import { AiOutlinePlus } from "react-icons/ai";
 
 export const AddTweetButton = () => {
+  const { username } = useUserContext();
+  const router = useRouter();
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
 
   const id = useId();
 
+  const [tweet, setTweet] = useState("");
+  const { isDisabled } = useTweetButton(tweet);
+
   const handleClick = () => {
+    fetch("https://localhost:7285/api/tweets", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        userName: username,
+        tweetText: tweet,
+      }),
+      cache: "no-cache",
+    });
+    router.refresh();
+    router.push("/home");
     onClose();
+  };
+
+  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setTweet(e.target.value);
   };
 
   return (
@@ -50,12 +78,18 @@ export const AddTweetButton = () => {
               variant="bordered"
               size="lg"
               minRows={1}
+              onChange={handleOnChange}
             />
           </ModalBody>
 
           <ModalFooter>
             <div className="w-[100px]">
-              <Button onClick={handleClick} text="Tweet" variant="primary" />
+              <Button
+                isDisabled={isDisabled}
+                onClick={handleClick}
+                text="Tweet"
+                variant="primary"
+              />
             </div>
           </ModalFooter>
         </ModalContent>

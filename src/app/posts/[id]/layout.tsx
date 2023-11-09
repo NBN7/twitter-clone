@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   description: "See what's happening in the world right now",
 };
 
+import { AuthProviders } from "@/app/AuthProviders";
+import { UserContextProvider } from "@/context/userContext";
+
 import { TweetNavbar } from "@/components/navbars/TweetNavbar";
 
 export default function RootLayout({
@@ -17,8 +20,12 @@ export default function RootLayout({
 }) {
   return (
     <div className={roboto.className}>
-      <TweetNavbar />
-      {children}
+      <AuthProviders>
+        <UserContextProvider>
+          <TweetNavbar />
+          {children}
+        </UserContextProvider>
+      </AuthProviders>
     </div>
   );
 }

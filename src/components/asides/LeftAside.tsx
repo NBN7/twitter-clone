@@ -1,6 +1,8 @@
 "use client";
 
-import { useId } from "react";
+import { useId, useState } from "react";
+import { useTweetButton } from "@/hooks/useTweetButton";
+import { useUserContext } from "@/context/userContext";
 
 import {
   Modal,
@@ -19,11 +21,30 @@ import { LeftAsideUser } from "../LeftAsideUser";
 import { TwitterIcon } from "../icons/TwitterIcon";
 
 export const LeftAside = () => {
+  const [tweet, setTweet] = useState("");
+  const { isDisabled } = useTweetButton(tweet);
+  const { username } = useUserContext();
+
   const id = useId();
 
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
 
+  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setTweet(e.target.value);
+  };
+
   const handleTweetClick = () => {
+    fetch("https://localhost:7285/api/tweets", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        userName: username,
+        tweetText: tweet,
+      }),
+      cache: "no-cache",
+    });
     onClose();
   };
 
@@ -52,13 +73,14 @@ export const LeftAside = () => {
                   variant="bordered"
                   size="lg"
                   minRows={1}
-                  label=""
+                  onChange={handleOnChange}
                 />
               </ModalBody>
 
               <ModalFooter>
                 <div className="w-[100px]">
                   <Button
+                    isDisabled={isDisabled}
                     onClick={handleTweetClick}
                     text="Tweet"
                     variant="primary"

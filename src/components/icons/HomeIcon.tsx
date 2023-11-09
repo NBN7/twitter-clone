@@ -1,22 +1,24 @@
 "use client";
 
-import { ICONS } from "@/constants/icons";
-import { iconsStyle } from "@/style/iconsStyle";
+import { usePathname } from "next/navigation";
 
 import { GoHome, GoHomeFill } from "react-icons/go";
 
-interface IHomeIcon {
-  activeIcon: string;
-  onClick?: () => void;
-}
+export const HomeIcon = () => {
+  const pathname = usePathname();
 
-export const HomeIcon = ({ activeIcon, onClick }: IHomeIcon) => {
   return (
-    <button onClick={onClick}>
-      {activeIcon === ICONS.HOME ? (
-        <GoHomeFill className={iconsStyle} size="30px" />
+    <button>
+      {pathname.includes("/home") ? (
+        <GoHomeFill
+          className="active:scale-80 transition-all duration-200"
+          size="30px"
+        />
       ) : (
-        <GoHome className={iconsStyle} size="30px" />
+        <GoHome
+          className="active:scale-80 transition-all duration-200"
+          size="30px"
+        />
       )}
     </button>
   );

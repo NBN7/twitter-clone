@@ -1,6 +1,11 @@
-import { TweetPost } from "@/components/posts/TweetPost";
+"use client";
 
-import { getOneUser } from "@/services/getOneUser";
+import { useState, useEffect } from "react";
+
+import { getOnePost } from "@/services/getOnePost";
+import { TPost } from "@/types/post";
+
+import { TweetPost } from "@/components/posts/TweetPost";
 
 import type { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 
@@ -10,8 +15,11 @@ interface IPostPage {
 
 export default async function PostPage({ params }: IPostPage) {
   const { id } = params;
+  const [tweet, setTweet] = useState<TPost>();
 
-  const user = await getOneUser(id);
+  useEffect(() => {
+    getOnePost(id).then((post) => setTweet(post));
+  }, []);
 
-  return <TweetPost user={user} />;
+  return <TweetPost post={tweet as TPost} />;
 }
